@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!--<script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD95fmopdXEZHce5yGczh80gDi_VGmhIc8&callback=initMap">
+    </script>-->
+</head>
+<body>
+<div class="toDo">
+    <header class="header">
+        <div class="wrapper">
+            <h3>ToDo List</h3>
+            <select class="sort_list">Фільтр:
+                <option>Всі</option>
+                <option>Протерміновані</option>
+                <option>Виконані</option>
+                <option>Дата &#8595</option>
+                <option>Дата &#8593</option>
+                <option>Розташування</option>
+            </select>
+            <img class="toggle" id="plus" src="img/if_plus_1646001.png" height="24"/>
+            <img class="toggle" id="minus" src="img/if_minus_1282962.png" height="24"/>
+        </div>
+    </header>
+    <div class="task_display">
+        <div class="task">
+            <div class="task_wrapper">
+                <div class="task_name">
+                    <input id="taskName" class="clear" type="text" placeholder="Назва">
+                    <input id="taskDate" class="clear" type="date">
+                </div>
+                <textarea id="taskText" class="clear" placeholder="Опис"></textarea>
+                <div class="btn">
+                    <button class="add">Додати</button>
+                </div>
+                <div class="map"></div>
+            </div>
+        </div>
+    </div>
+    <div class="list">
+
+
+
+
+    </div>
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
