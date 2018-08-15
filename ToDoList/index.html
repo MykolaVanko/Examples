@@ -14,7 +14,7 @@
     <header class="header">
         <div class="wrapper">
             <h3>ToDo List</h3>
-            <select class="sort_list">Фільтр:
+            <select class="sort_list">
                 <option>Всі</option>
                 <option>Протерміновані</option>
                 <option>Виконані</option>
@@ -23,7 +23,6 @@
                 <option>Розташування</option>
             </select>
             <img class="toggle" id="plus" src="img/if_plus_1646001.png" height="24"/>
-            <img class="toggle" id="minus" src="img/if_minus_1282962.png" height="24"/>
         </div>
     </header>
     <div class="task_display">
@@ -34,19 +33,27 @@
                     <input id="taskDate" class="clear" type="date">
                 </div>
                 <textarea id="taskText" class="clear" placeholder="Опис"></textarea>
+                <div class="map"></div>
                 <div class="btn">
                     <button class="add">Додати</button>
+                    <button class="cancel">Скасувати</button>
                 </div>
-                <div class="map"></div>
             </div>
         </div>
     </div>
-    <div class="list">
+        <ul class="tasks_list">
+           <!-- <li class="task_list">
+                <p class="task_list_name">name</p>
+                <p class="task_list_date">Date</p>
+                <p class="task_list_description">description</p>
+                <div class="map_task"></div>
+                <img class="done" src="img/if_success_1646004.png" height="24"/>
+                <img class="edit" src="img/if_Compose_1891025.png" height="24"/>
+                <img class="delete" src="img/if_error_1646012.png" height="24"/>
+            </li>-->
+        </ul>
 
 
-
-
-    </div>
 </div>
 
 
