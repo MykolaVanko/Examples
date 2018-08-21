@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-
-    <!--<script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD95fmopdXEZHce5yGczh80gDi_VGmhIc8&callback=initMap">
-    </script>-->
+    <link rel="stylesheet" href="airDatepicker/datepicker.css">
+    <script src="airDatepicker/datepicker.js" defer></script>
+    <script src="airDatepicker/datepicker_UA.js" defer></script>
 </head>
 <body>
 <div class="toDo">
+    <div id="map" class="hidden"></div>
     <header class="header">
         <div class="wrapper">
             <h3>ToDo List</h3>
-            <select class="sort_list">Фільтр:
-                <option>Всі</option>
-                <option>Протерміновані</option>
-                <option>Виконані</option>
+            <select class="sort_list">Фільтр:  
                 <option>Дата &#8595</option>
                 <option>Дата &#8593</option>
+                <option>Протерміновані</option>
+                <option>Виконані</option>
                 <option>Розташування</option>
             </select>
-            <img class="toggle" id="plus" src="img/if_plus_1646001.png" height="24"/>
-            <img class="toggle" id="minus" src="img/if_minus_1282962.png" height="24"/>
+            <div class="open_new_task">
+                <img class="toggle" id="plus" src="img/if_plus_1646001.png" height="24"/>
+                <img class="toggle" id="minus" src="img/if_minus_1282962.png" height="24"/>
+            </div>
         </div>
     </header>
     <div class="task_display">
@@ -31,27 +32,26 @@
             <div class="task_wrapper">
                 <div class="task_name">
                     <input id="taskName" class="clear" type="text" placeholder="Назва">
-                    <input id="taskDate" class="clear" type="date">
+                    <input id="taskDate" class="clear datepicker-here" data-language='ua'
+                          data-timepicker="true" datatype="date" placeholder="Дата">
                 </div>
                 <textarea id="taskText" class="clear" placeholder="Опис"></textarea>
                 <div class="btn">
                     <button class="add">Додати</button>
+                    <img class="geoloc" src="img/if_geolocation_2969400.png" height="24"/>
                 </div>
-                <div class="map"></div>
             </div>
         </div>
     </div>
-    <div class="list">
-
-
+    <div class="list list_geo list_delete list_save">
 
 
     </div>
 </div>
 
 
-
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD95fmopdXEZHce5yGczh80gDi_VGmhIc8&callback=initMap"  async defer>
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="script.js"></script>
 </body>
