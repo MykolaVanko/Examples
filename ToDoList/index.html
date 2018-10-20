@@ -2,25 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>ToDO List</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="airDatepicker/datepicker.css">
-    <script src="airDatepicker/datepicker.js" defer></script>
-    <script src="airDatepicker/datepicker_UA.js" defer></script>
 </head>
 <body>
 <div class="toDo">
     <div id="map" class="hidden"></div>
+    <div id="infowindow-content">
+        <img id="place-icon" src="" height="16" width="16">
+        <span id="place-name"  class="title"></span><br>
+        Place ID <span id="place-id"></span><br>
+        <span id="place-address"></span>
+    </div>
     <header class="header">
         <div class="wrapper">
             <h3>ToDo List</h3>
-            <select class="sort_list">Фільтр:  
-                <option>Дата &#8595</option>
-                <option>Дата &#8593</option>
-                <option>Протерміновані</option>
-                <option>Виконані</option>
-                <option>Розташування</option>
+            <select id="sort_list" name="sort_list">
+                <option value="all">Всі</option>
+                <option value="done_task">Виконані</option>
+                <option value="terminated">Протерміновані</option>
+                <option value="date-up">Дата &#8593</option>
+                <option value="name">А &#8595</option>
+                <option value="location">Розташування</option>
             </select>
+                <input class="search" type="text" value="" placeholder="Пошук">
+                <input class="data_search" type="date">
             <div class="open_new_task">
                 <img class="toggle" id="plus" src="img/if_plus_1646001.png" height="24"/>
                 <img class="toggle" id="minus" src="img/if_minus_1282962.png" height="24"/>
@@ -32,27 +38,25 @@
             <div class="task_wrapper">
                 <div class="task_name">
                     <input id="taskName" class="clear" type="text" placeholder="Назва">
-                    <input id="taskDate" class="clear datepicker-here" data-language='ua'
-                          data-timepicker="true" datatype="date" placeholder="Дата">
+                    <input id="taskDate" class="clear" placeholder="Дата" type="datetime-local">
                 </div>
                 <textarea id="taskText" class="clear" placeholder="Опис"></textarea>
                 <div class="btn">
                     <button class="add">Додати</button>
-                    <img class="geoloc" src="img/if_geolocation_2969400.png" height="24"/>
                 </div>
             </div>
         </div>
     </div>
-    <div class="list list_geo list_delete list_save">
-
+    <div class="list">
 
     </div>
 </div>
 
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD95fmopdXEZHce5yGczh80gDi_VGmhIc8&callback=initMap"  async defer>
+<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD95fmopdXEZHce5yGczh80gDi_VGmhIc8&libraries=geometry&callback=initMap"  async defer>
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script src="script.js"></script>
 </body>
 </html>
