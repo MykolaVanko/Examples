@@ -539,8 +539,19 @@ footer
   display: none!important
 
 .scale
-  transform: scale(0)
-  transition: 300ms
+  position: relative
+  transform: scale(0.6)
+  transition: 100ms ease-in-out
+
+.anim-left
+  animation-name: moveLeft
+  animation-duration: 300ms
+  animation-delay: 100ms
+
+.anim-right
+  animation-name: moveRight
+  animation-duration: 300ms
+  animation-delay: 100ms
 
 .client-photo
   width: 100px
@@ -833,3 +844,20 @@ footer
 
   .slider-arr
     background-color: transparent
+
+
+
+//***ANiMATION**///
+
+@keyframes moveLeft
+  0%
+    left: 0
+  100%
+    left: -1000px
+
+@keyframes moveRight
+  0%
+    right: 0
+  100%
+    right: -1000px
+

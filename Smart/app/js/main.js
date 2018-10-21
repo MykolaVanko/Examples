@@ -132,10 +132,10 @@ function right() {
         for (let i = 0; i < feedbacks.length; i++) {
             if (feedbacks[i].classList.contains('show')) {
                 setTimeout(()=> {
-                    feedbacks[i].classList.remove('show', 'scale');
+                    feedbacks[i].classList.remove('show', 'scale', 'anim-left');
                     feedbacks[i].classList.add('hidden-feedback');
                 },300);
-                feedbacks[i].classList.add('scale');
+                feedbacks[i].classList.add('scale', 'anim-left');
                 break
             }
         }
@@ -166,15 +166,16 @@ function left() {
                     feedbacks[i - num].classList.remove('hidden-feedback');
                     feedbacks[i - num].classList.add('show');
                     feedbacks[i].classList.add('hidden-feedback');
-                    feedbacks[i].classList.remove('show', 'scale');
+                    feedbacks[i].classList.remove('show', 'scale', 'anim-right');
                 }, 300);
-                feedbacks[i].classList.add('scale');
+                feedbacks[i].classList.add('scale', 'anim-right');
                 return
             }
         }
 
         for (let i = 0; i < feedbacks.length; i++) {
-            if (feedbacks[i].classList.contains('hidden-feedback') && feedbacks[i].nextElementSibling.classList.contains('show')) {
+            if (feedbacks[i].classList.contains('hidden-feedback') &&
+                feedbacks[i].nextElementSibling.classList.contains('show')) {
                 setTimeout(()=> {
                     feedbacks[i].classList.add('show');
                     feedbacks[i].classList.remove('hidden-feedback');
@@ -187,10 +188,10 @@ function left() {
             if (feedbacks[i].classList.contains('show') &&
                 feedbacks[i].nextElementSibling.classList.contains('hidden-feedback')) {
                 setTimeout(()=> {
-                    feedbacks[i].classList.remove('show', 'scale');
+                    feedbacks[i].classList.remove('show', 'scale', 'anim-right');
                     feedbacks[i].classList.add('hidden-feedback');
                 },300);
-                feedbacks[i].classList.add('scale');
+                feedbacks[i].classList.add('scale', 'anim-right');
                 break
             }
         }
