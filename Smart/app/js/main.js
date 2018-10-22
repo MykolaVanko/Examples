@@ -106,15 +106,23 @@ arrR.addEventListener('click', right);
    }
 
 })();
-
-
+//animate Slider
+let feedbacksContainer = document.getElementsByClassName('client-feedbacks')[0];
+let animSlideR580 = 'anim-right-slide-580';
+let animSlideR433 = 'anim-right-slide-433';
+let animSlideL580 = 'anim-left-slide-580';
+let animSlideL433 = 'anim-left-slide-433';
 //slide right
 function right() {
-
+    let anim = animSlideL580;
     try {
         setTimeout(()=>{
             slideIndicate();
         },305);
+        getWidth();
+        if (windowWidth <= 1410){
+            anim = animSlideL433
+        }
 
 
         let leftElem = document.getElementsByClassName('show');
@@ -124,7 +132,9 @@ function right() {
                 setTimeout(()=> {
                     feedbacks[i + 1].classList.add('show');
                     feedbacks[i + 1].classList.remove('hidden-feedback');
+                    feedbacksContainer.classList.remove(anim);
                 },300);
+                feedbacksContainer.classList.add(anim);
                 break
             }
         }
@@ -134,8 +144,10 @@ function right() {
                 setTimeout(()=> {
                     feedbacks[i].classList.remove('show', 'scale', 'anim-left');
                     feedbacks[i].classList.add('hidden-feedback');
+                    feedbacksContainer.classList.remove(anim);
                 },300);
                 feedbacks[i].classList.add('scale', 'anim-left');
+                feedbacksContainer.classList.add(anim);
                 break
             }
         }
@@ -146,6 +158,7 @@ function right() {
 
 //slide left
 function left() {
+    let anim = animSlideR580;
     try {
         setTimeout(()=>{
             slideIndicate();
@@ -157,6 +170,9 @@ function left() {
         let lastElem = feedbacks[feedbacks.length];
         //check window size to correct slider works
         getWidth();
+        if (windowWidth <= 1410){
+            anim = animSlideR433
+        }
         if (windowWidth <= 1100){
             num = 1
         }
@@ -167,8 +183,10 @@ function left() {
                     feedbacks[i - num].classList.add('show');
                     feedbacks[i].classList.add('hidden-feedback');
                     feedbacks[i].classList.remove('show', 'scale', 'anim-right');
+                    feedbacksContainer.classList.remove(anim);
                 }, 300);
                 feedbacks[i].classList.add('scale', 'anim-right');
+                feedbacksContainer.classList.add(anim);
                 return
             }
         }
@@ -190,8 +208,10 @@ function left() {
                 setTimeout(()=> {
                     feedbacks[i].classList.remove('show', 'scale', 'anim-right');
                     feedbacks[i].classList.add('hidden-feedback');
+                    feedbacksContainer.classList.remove(anim);
                 },300);
                 feedbacks[i].classList.add('scale', 'anim-right');
+                feedbacksContainer.classList.add(anim);
                 break
             }
         }
