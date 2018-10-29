@@ -184,6 +184,7 @@ function left() {
                     feedbacks[i].classList.add('hidden-feedback');
                     feedbacks[i].classList.remove('show', 'scale', 'anim-right');
                     feedbacksContainer.classList.remove(anim);
+                    this.setAttribute('disabled', 'true');
                 }, 300);
                 feedbacks[i].classList.add('scale', 'anim-right');
                 feedbacksContainer.classList.add(anim);
@@ -315,14 +316,14 @@ document.addEventListener('DOMContentLoaded', function() {
 }, false);
 
 //slide indicators
+let orangeLines = document.getElementsByClassName('slider-line');
 function slideIndicate() {
-    let orangeLines = document.getElementsByClassName('slider-line');
     for (let i = 0; i < feedbacks.length; i++) {
         if (feedbacks[i].classList.contains('show')){
             for (let j = 0; j < orangeLines.length; j++) {
                 if (j === i){
                     orangeLines[j].classList.add('line-bg')
-                } 
+                }
             }
         } else if (feedbacks[i].classList.contains('hidden-feedback')) {
             for (let j = 0; j < orangeLines.length; j++) {
