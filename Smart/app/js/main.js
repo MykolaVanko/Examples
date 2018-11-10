@@ -184,7 +184,6 @@ function left() {
                     feedbacks[i].classList.add('hidden-feedback');
                     feedbacks[i].classList.remove('show', 'scale', 'anim-right');
                     feedbacksContainer.classList.remove(anim);
-                    this.setAttribute('disabled', 'true');
                 }, 300);
                 feedbacks[i].classList.add('scale', 'anim-right');
                 feedbacksContainer.classList.add(anim);
